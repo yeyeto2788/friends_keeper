@@ -1,0 +1,27 @@
+logging:
+  path: "./friends_keeper.log"
+  debug_level: "NOTSET"
+  log_requests: True
+
+notifications:
+  type:
+    - "gotify"
+    - "file"
+  title: "Friendly reminder"
+  message: "Remember to {action} {friend_name}"
+
+notifiers:
+  file:
+    path: "./notifications.txt"
+
+  gotify:
+    url: "https://notifications.local.juanbiondi.com"
+    app_token: "A2URDOuPTEqwrAc"
+
+  email:
+    port: 945
+    password: "super_secret_password"
+    from_address: "juanernestobiondi@gmail.com"
+    to_address:
+      - "test@test.com"
+      - "jebp.freelance@gmail.com"

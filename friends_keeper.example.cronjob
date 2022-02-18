@@ -1,0 +1,2 @@
+# Execute friends keeper main core every day 
+0 * * * * /usr/bin/docker run -it --rm -v /home/yeyeto2788/workspace/own_workspace/friends_keeper/friends_keeper.db:/friends_keeper/friends_keeper.db:rw --name friend_keeper friends_keeper run

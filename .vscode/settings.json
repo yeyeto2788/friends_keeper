@@ -1,0 +1,12 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "friends_keeper",
+      "database": "${workspaceFolder:friends_keeper}/friends_keeper.db"
+    }
+  ],
+  "sqltools.useNodeRuntime": true,
+  "python.formatting.provider": "black"
+}

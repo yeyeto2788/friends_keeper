@@ -1,0 +1,115 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Create test data",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/create_test_data.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Load CSV file",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/create_from_csv.py",
+      "console": "integratedTerminal",
+      "args": ["--csv-file", "./personal.csv"]
+    },
+    {
+      "name": "Add friend",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["add", "friend", "--nickname", "testnickname11"]
+    },
+    {
+      "name": "Add notification friend #10",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["add", "notification", "--friend-id", "10"]
+    },
+    {
+      "name": "Show notifications",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["show", "notifications"]
+    },
+    {
+      "name": "Show notifications friend #1",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["show", "notifications", "--friend-id", "1"]
+    },
+    {
+      "name": "Show all friends (including inactive)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["show", "friends", "--show-inactive", "true"]
+    },
+    {
+      "name": "Show active friends",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["show", "friends"]
+    },
+    {
+      "name": "Show configuration",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["show", "configuration"]
+    },
+    {
+      "name": "Delete friend",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["delete", "friend", "--id", "11"]
+    },
+    {
+      "name": "Delete notification ID #3",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["delete", "notification", "--id", "3"]
+    },
+    {
+      "name": "Delete friend #10 notification",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["delete", "notification", "--friend-id", "10"]
+    },
+    {
+      "name": "Run main core",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "args": ["-vv", "run"]
+    }
+  ]
+}

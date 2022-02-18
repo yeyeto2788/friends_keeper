@@ -1,0 +1,1 @@
+"""Friends keeper module definition."""

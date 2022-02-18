@@ -1,0 +1,30 @@
+[flake8]
+max-line-length = 120
+exclude = 
+  .git,
+  __pycache__,
+  README.md,
+  poetry.lock,
+  Dockerfile,
+  .pre-commit-config.yaml,
+  .flake8,
+  .gitignore,
+  requirements.txt,
+  .dockerignore,
+  pytest.ini,
+  pyproject.toml,
+  poetry.toml,
+  .vscode/*,
+  CHANGELOG.md,
+  .gitlab-ci.yml,
+  requirements-dev.txt,
+  doc/*,
+  .coveragerc,
+  venv/*,
+  .venv/*,
+  setup.py,
+  task-definition.json,
+  .devcontainer/*
+max-complexity = 10
+include=friends_keeper,tests
+docstring-convention=google
