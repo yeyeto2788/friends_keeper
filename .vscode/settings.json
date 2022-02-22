@@ -8,5 +8,7 @@
     }
   ],
   "sqltools.useNodeRuntime": true,
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "spellright.language": [],
+  "spellright.documentTypes": ["latex", "plaintext"]
 }

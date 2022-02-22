@@ -60,7 +60,7 @@ class FileNotifier(BaseNotifier):
                 create_file = True
 
             notification_file_path = config_notifier_file_path
-            
+
         else:
             notification_file_path = NOTIFICATIONS_FILE_PATH
 
