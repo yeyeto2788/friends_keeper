@@ -251,7 +251,7 @@ def get_notification(notification_id: int) -> NotificationEvent:
     logger.info(f"Querying database for notification event '{notification_id}'")
 
     try:
-        notification = get_object_from_query(query=query)
+        notification = get_object_from_query(query=query)[0]
         logger.info(f"Found notification event: '{notification}'")
 
     except DatabaseError:
