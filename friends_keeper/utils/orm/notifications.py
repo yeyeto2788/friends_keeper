@@ -29,7 +29,7 @@ def get_today_notifications() -> List[NotificationEvent]:
         List[NotificationEvent]: List with obtained notification event objects.
     """
     filter = (NotificationEvent.already_notified == False) & (  # noqa: E712
-        NotificationEvent.date == datetime.today().date()
+        NotificationEvent.date <= datetime.today().date()
     )
     query = select(NotificationEvent).where(filter)
     logger.debug("Querying database for today's notification events")
