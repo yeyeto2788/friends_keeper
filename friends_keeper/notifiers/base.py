@@ -60,7 +60,7 @@ class BaseNotifier(ABC):
 
         logger.debug(f"Found friends: {friends}")
 
-        if self.configuration["notifications"]["message"]:
+        if "message" in self.configuration["notifications"]:
             notification_message = self.configuration["notifications"]["message"].format(
                 action=action, friend_name=friends
             )

@@ -35,7 +35,7 @@ def load_configuration_file() -> dict:
             logger.info(f"Loading configuration from '{config_file_path}'")
             configuration = yaml.safe_load(config_file)
 
-        except (yaml.YAMLError, ConfigurationError) as exec_error:
+        except yaml.YAMLError as exec_error:
 
             if hasattr(exec_error, "problem_mark"):
                 mark = exec_error.problem_mark

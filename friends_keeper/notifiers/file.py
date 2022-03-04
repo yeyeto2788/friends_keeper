@@ -62,12 +62,17 @@ class FileNotifier(BaseNotifier):
             notification_file_path = config_notifier_file_path
 
         else:
-            notification_file_path = NOTIFICATIONS_FILE_PATH
+            config_notifier_file_path = NOTIFICATIONS_FILE_PATH
+
+            if os.path.exists(config_notifier_file_path):
+                logger.debug(f"File '{config_notifier_file_path}' exists using it for notification events.")
+                create_file = False
+            else:
+                create_file = True
 
         if create_file:
 
             try:
-
                 with open(config_notifier_file_path, "w"):
                     logger.debug(f"Creating the file '{config_notifier_file_path}' as it does not exists.")
             except OSError:

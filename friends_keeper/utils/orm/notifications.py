@@ -75,8 +75,7 @@ def create_notification(friend_id: int, date: datetime.date) -> NotificationEven
             logger.error(msg)
             raise DatabaseError(msg)
 
-        else:
-            return notification
+    return notification
 
 
 def update_notification_event_date(friend_id: int, new_date: datetime.date) -> bool:
