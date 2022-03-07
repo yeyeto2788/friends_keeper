@@ -3,9 +3,11 @@ import logging
 
 from typing import List
 
-import gotify
+from gotify import GotifyError
+from gotify import gotify
 
 from friends_keeper.database.notifications import NotificationEvent
+from friends_keeper.exceptions import ConfigurationError
 from friends_keeper.notifiers.base import BaseNotifier
 
 
@@ -29,17 +31,27 @@ class GotifyNotifier(BaseNotifier):
             configuration (dict): YAML configuration loaded in JSON format.
         """
         logger.info("Instantiating the gotify module")
-        # TODO: Get this values from configuration.
-        self.base_url = "https://notifications.local.juanbiondi.com"
-        self._token = "A2URDOuPTEqwrAc"
+
+        if "gotify" in configuration["notifiers"]:
+            if "app_token" in configuration["notifiers"]["gotify"]:
+                self._token = configuration["notifiers"]["gotify"]["app_token"]
+            else:
+                raise ConfigurationError("Gotify app token missing in configuration.")
+
+            if "url" in configuration["notifiers"]["gotify"]:
+                self.base_url = configuration["notifiers"]["gotify"]["url"]
+            else:
+                raise ConfigurationError("Gotify URL missing in configuration.")
+        else:
+            raise ConfigurationError("Gotify configuration not found.")
 
         try:
-            self.gotify_obj = gotify.gotify(
+            self.gotify_obj = gotify(
                 base_url=self.base_url,
                 app_token=self._token,
             )
 
-        except gotify.GotifyError:
+        except GotifyError:
             raise
 
         super().__init__(configuration)
@@ -63,7 +75,7 @@ class GotifyNotifier(BaseNotifier):
                 priority=0,
             )
 
-        except gotify.GotifyError:
+        except GotifyError:
             logger.error("Error occurred trying to send the gotify message.")
             raise
 

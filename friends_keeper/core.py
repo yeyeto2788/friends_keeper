@@ -68,7 +68,7 @@ def main_core(debug_level: Union[int, None] = None):
             try:
                 notifiers = NotifierFactory.get_notifiers(configuration=configuration)
 
-            except NotImplementedError:
+            except (NotImplementedError, ConfigurationError):
                 exec_info = sys.exc_info()
                 logger.error("Error occurred trying to send the notification")
                 traceback.print_exception(*exec_info)
