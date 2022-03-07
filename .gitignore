@@ -9,6 +9,7 @@ scripts/env_files/*
 scripts/executions/*
 scripts/*_execution.txt
 example_data/*
+notifications.txt
 
 # Application level files
 input/
