@@ -45,6 +45,8 @@ class FileNotifier(BaseNotifier):
         # TODO: Checking the config should be responsibility of the load_configuration function.
         # Build the notification message
         notification_message = self.build_notification_message(notifications=notifications)
+        # Add carriage return so it appends data onto the next line.
+        notification_message += "\n"
 
         # TODO: Move check to init and also create the file_path attribute
         config_notifier_file_path = self.configuration["notifiers"]["file"]["path"]

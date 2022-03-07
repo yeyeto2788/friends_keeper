@@ -1,7 +1,10 @@
+# Poetry lock file
+poetry.lock
+
 # History files
 .history/*
 
-# Cdra example execution files
+# Example execution files
 scripts/env_files/*
 scripts/executions/*
 scripts/*_execution.txt
