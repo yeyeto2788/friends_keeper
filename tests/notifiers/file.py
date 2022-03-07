@@ -9,6 +9,12 @@ from friends_keeper.exceptions import ConfigurationError
 from friends_keeper.notifiers.file import FileNotifier
 
 
+def clean_notifications_file():
+    if os.path.exists("./notifications.txt"):
+        with open("./notifications.txt", "w") as notifications_file:
+            notifications_file.close()
+
+
 def test_file_notifier_initialization():
     notifier = FileNotifier(configuration=DEFAULT_CONFIGURATION)
     assert notifier.title == "Friends keeper notification"
@@ -58,6 +64,8 @@ def test_file_notify_no_file_path(build_msg_mock, two_notifications):
         file_content = file_obj.read()
 
     assert f" - {msg}" in file_content
+
+    clean_notifications_file()
 
 
 @mock.patch("friends_keeper.notifiers.file.open")
