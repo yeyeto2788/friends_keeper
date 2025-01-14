@@ -15,7 +15,7 @@ jsonschema = "^4.4.0"
 prettytable = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
-black = "^21.12b0"
+black = "^24.3"
 flake8 = "^4.0.1"
 pre-commit = "^2.16.0"
 pytest = "^6.2.5"
